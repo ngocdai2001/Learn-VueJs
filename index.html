@@ -5,19 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="vue.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <h1>lear vuejs</h1>
-    <div id="contact">
-        <div class="card-container">
-            <div class="card" @mouseover="onLogEvent"> Mouse Over </div>
-            <div class="card" @mouseleave="onLogEvent"> Mouse Leave </div>
-            <div class="card" @dblclick="onLogEvent"> Dobule Click </div>
-            <div class="card" @mousemove="onLogEventMove">Move Even: {{`${x} - ${y}`}}</div>
+    <div id="app">
+        <!-- <div v-on:mouseover="toaDo">
+            <input type="text" v-on:input="changeValue">
+            <p>{{ showPost() }}</p>
+            <p>{{ title }}</p>
+            <a v-bind:href="link">Github: ngocdai</a>
+            <p v-html="testHTML"></p>
+            <p>Tọa độ của chuột: {{x}} - {{y}}</p>
+            <p v-on:mouseover="stopMouse">Dừng tính tọa độ chuột</p>
+            <button v-on:click="dem++">Tăng giá trị</button>
+            <p>Giá trị: {{ dem }}</p>
+            <p>Giá trị: {{ dem > 20 ? 'Bạn đã vượt quá giá trị' : 'Bạn vẫn nằm trong giá trị' }}</p>
+            <p>{{ diem }}</p>
+        </div> -->
+
+        <!-- Ex: Phân biệt click giữa các ô với computed, nếu không phải ô thứ 3 thì chuyển 
+        hết sang màu đỏ, còn ô thứ 3 thì chuyển sang xanh -->
+
+        <div class="background">
+            <div class="block" @click="checkBlock = !checkBlock" :class="{red: checkBlock}"></div>
+            <div class="block" :class="{red: checkBlock}"></div>
+            <div class="block" @click="checkBlock" :class="{green: checkBlock}"></div>
+            <div class="block" :class="{red: checkBlock}"></div>
         </div>
+
+        <div>
+            <button @click="printThisMoment">Method Now</button>
+            <p ref="computedNow"></p>
+            <p ref="methodNow"></p>
+        </div>
+
+       
+        <!-- <div class="background">
+            <div class="block" @click="checkBlock = !checkBlock" :class="{red: checkBlock}"></div>
+            <div class="block" :class="{red: checkBlock}"></div>
+            <div class="block" :class="color"></div>
+             
+            <input type="text" v-model="color">
+        </div> -->
+
+        <!-- <div>
+            <input type="text" v-on:keyup.enter="keyBoard">
+        </div> -->
     </div>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
     <script src="main.js"></script>
 </body>
 </html>
