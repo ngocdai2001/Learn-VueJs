@@ -1,19 +1,19 @@
-* {
-    border: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-.card-container {
-    text-align: center;
-}
-
-.card {
-    width: 200px;
-    height: 200px;
+.background {
     display: flex;
-    align-items: center;
+    gap: 20px;
     justify-content: center;
-    margin-top: 40px;
-    background: lawngreen;
+}
+
+.block {
+    width: 150px;
+    height: 150px;
+    background: #766b6b;
+}
+
+.red {
+    background: red;
+}
+
+.green {
+    background: green;
 }
